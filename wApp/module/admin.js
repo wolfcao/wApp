@@ -28,9 +28,9 @@ exports.insertRow = function(items, callback) {
 	}, callback);
 };
 
-exports.updateRow = function(items, where, callback) {
+exports.updateRow = function(items, where) {
 	userDB();
-	db.update(conn, table, items, where, callback);
+	db.update(conn, table, items, where);
 };
 
 // 通过自定义条件，查询数据表中是否有匹配

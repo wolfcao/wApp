@@ -6,13 +6,15 @@ block content
     div.ui-main-body
       div.ui-form
         form(action='/user/setting', method='post')
-          input(type='hidden', name='userid', value='#{curr_user._id}')
+          if (typeof action !== 'undefined')
+            input(id='J_formAction', type='hidden', value='#{action}')
+          input(type='hidden', name='userid', value='#{user._id}')
           label 
-            p.ui-input-text.pl0 账户名: #{curr_user.login}
+            p.ui-input-text.pl0 账户名: #{user.login}
           label 
             span 电子邮箱:
-            input.ui-input-text(type='text', name='email', value='#{curr_user.email}')
+            input.ui-input-text(type='text', name='email', value='#{user.email}')
           label 
             span 花名:
-            input.ui-input-text(type='text', name='nickname', value='#{curr_user.nickname}')
-          input(class='ui-input-submit', type='submit', name='commit', value='Create an account')
+            input.ui-input-text(type='text', name='nickname', value='#{user.nickname}')
+          input(class='ui-input-submit', type='submit', name='commit', value='提交最新个人信息')

@@ -37,18 +37,11 @@ exports.insert = function(connection, table, items, callback) {
 };
 
 // 
-exports.update = function(connection, table, items, where, callback) {
+exports.update = function(connection, table, items, where) {
 	var keyValueStr = keyValToStr(items, ',');
 	var conditionStr = keyValToStr(where, 'and');
-	
-	connection.query('update ' + table + ' set ' + keyValueStr + ' where ' + conditionStr, function(err, result) {
-		if (err) {
-			throw err;
-		};
-		if(result) {
-			callback.call(this, result); // result.insertId
-		}
-	});
+
+	connection.query('update ' + table + ' set ' + keyValueStr + ' where ' + conditionStr);
 };
 
 exports.findOne = function(connection, table, items, callback) {

@@ -40,7 +40,7 @@ exports.setting = function(req, res) {
 
 	// code body
 	var title = 'User setting';
-	var id = req.sesstion.user.id;
+	var id = req.session.user._id;
 	adminModule.isExistRow({
 		_id: id
 	}, function(result) {
@@ -61,20 +61,32 @@ exports.modifySetting = function(req, res) {
 	var _id = req.param('userid');
 	var _email = req.param('email');
 	var _nickname = req.param('nickname');
-
+	// update admin infor
 	adminModule.updateRow({
 		email: _email,
 		nickname: _nickname
 	}, {
 		_id: _id
-	},function(result) {
-		var _action = '';
-		if(result && result.length) {
-			_action = 'post';
+	});
+	// findOne row
+	adminModule.isExistRow({
+		_id: _id
+	}, function(result) {
+		var action = '';
+		if(result && result.length>0) {
+			action = 'success';
+		} else {
+			action = 'fail';
 		}
-		res.render('user/setting', {
+		res.render('user/setting',{
 			title: title,
-			action: _action
+			action: action,
+			user: result[0],
+			// config js
+			pagejs: {
+				pathname: 'user',
+				filename: 'modifySetting'
+			}
 		});
 	});
 };
