@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  div.main
+    h1.ui-h1-title 个人信息管理
+    div.ui-main-body
+      div.ui-form
+        form(action='/user/setting', method='post')
+          input(type='hidden', name='userid', value='#{curr_user._id}')
+          label 
+            p.ui-input-text.pl0 账户名: #{curr_user.login}
+          label 
+            span 电子邮箱:
+            input.ui-input-text(type='text', name='email', value='#{curr_user.email}')
+          label 
+            span 花名:
+            input.ui-input-text(type='text', name='nickname', value='#{curr_user.nickname}')
+          input(class='ui-input-submit', type='submit', name='commit', value='Create an account')

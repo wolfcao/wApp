@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  if errcode == '701'
+    div.flash-messages.container 
+      div.flash.flash-error Incorrect username or password.
+  div.ui-login-form
+    h1 Sign in
+    div.ui-form-body
+      form(action='/sign/session', method='post')
+        label Username<br /> 
+          input(class='ui-input-text', type='text', name='login')
+        label Password 
+          a(href='#') (forgot password)<br />
+          input(class='ui-input-text', type='password', name='passwd')
+        input(class='ui-input-submit', type='submit', name='commit', value='Sign in')

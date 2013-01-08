@@ -1,0 +1,27 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div.ui-header
+      div.container.clearfix
+        a.ui-header-logo(href='/') Home
+        ul.ui-top-nav
+          li.ml30
+            a(href='/manage') Manage
+        div.ui-header-actions
+          if curr_user
+            em.ui-tip-message.mr15 Hi, 
+              a(href='/user/setting') #{curr_user.nickname}!
+            a.ui-button(href='/sign/signout') Sign out
+          else
+            a.ui-button.ui-btn-green.mr15(href='/sign/signup') Sign up
+            a.ui-button(href='/sign/signin') Sign in
+    div.container.clearfix
+      block content
+    include includes/footer
+    script(src='/javascripts/lib/jquery-1.5.2.min.js')
+    script(src='/javascripts/lib/util.js')
+    if (typeof pagejs !== 'undefined')
+      script(src='/javascripts/pages/#{pagejs.pathname}/#{pagejs.filename}.js')

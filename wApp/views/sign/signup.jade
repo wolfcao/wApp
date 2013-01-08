@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  div.ui-login-form
+    h1 Sign up
+    div.ui-form-body
+      form(action='/user/createAccount', method='post')
+        label Username
+          input(class='ui-input-text', type='text', name='login')
+        label Password 
+          input(class='ui-input-text', type='password', name='passwd')
+        label Email
+          input.ui-input-text(type='text', name='email')
+        input(class='ui-input-submit', type='submit', name='commit', value='Create an account')

@@ -1,0 +1,298 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 13px "Lucida Grande",Helvetica,Arial,sans-serif;
+}
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+ul,ol,li{
+    list-style-type: none;
+}
+.clearfix {
+    clear: both;
+    overflow: hidden;
+}
+.ml30{
+    margin-left: 30px;
+}
+.mr15{
+    margin-right: 15px;
+}
+.pl0{
+    padding-left: 0!important;
+}
+
+input[type="text"], input[type="password"], input[type="email"], textarea {
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+    outline: medium none;
+}
+input.focus[type="text"], input[type="text"]:focus, .focused .drag-and-drop, input.focus[type="password"], input[type="password"]:focus, input.focus[type="email"], input[type="email"]:focus, textarea.focus, textarea:focus {
+    background-color: #FFFFFF;
+    border-color: #51A7E8;
+    box-shadow: 0 0 5px rgba(81, 167, 232, 0.5), 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+}
+.ui-login-form {
+    margin: 20px auto;
+    width: 400px;
+}
+.ui-login-form h1 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #6C8393;
+    background-image: linear-gradient(#7F95A5, #6C8393);
+    background-repeat: repeat-x;
+    border-color: #6E8290 #6E8290 #586873;
+    border-image: none;
+    border-radius: 3px 3px 0 0;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px 18px;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+form label {
+    color: #2F424E;
+    display: inline-block;
+    font-size: 110%;
+    text-shadow: 0 -1px 0 rgba(100, 100, 100, 0.1);
+}
+form .ui-input-text {
+    background-color: #FFFFFF;
+    font-size: 110%;
+    margin: 5px 0 20px;
+    padding: 5px;
+    width: 330px;
+}
+.ui-login-form .ui-form-body {
+    background-color: #FFFFFF;
+    border-color: #E9F1F4 #D8DEE2 #D8DEE2;
+    border-radius: 0 0 3px 3px;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    margin: 0 0 1em;
+    overflow: hidden;
+    padding: 2em;
+}
+.ui-button{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-user-select: none;
+    background-color: #E5E5E5;
+    background-image: linear-gradient(#F5F5F5, #E5E5E5);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #DDDDDD #BBBBBB;
+    border-image: none;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #666666;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Helvetica,arial,freesans,clean,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;
+    padding: 8px 15px;
+    position: relative;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+}
+a:hover.ui-button{
+    background-color: #D8EAF2;
+    background-image: linear-gradient(#F0F7FA, #D8EAF2);
+    background-repeat: repeat-x;
+    border-color: #CBE3EE #CBE3EE #97C7DD;
+    color: #337797;
+    text-decoration: none;
+}
+.ui-btn-green{
+    background-color: #60B044;
+    background-image: linear-gradient(#8ADD6D, #60B044);
+    border-color: #74BB5A #74BB5A #509338;
+    color: #FFFFFF;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+}
+a:hover.ui-btn-green{
+    background-color: #4C8B36;
+    background-image: linear-gradient(#69D344, #4C8B36);
+    background-repeat: repeat-x;
+    border-color: #4A993E;
+    color: #FFFFFF;
+}
+form .ui-input-submit {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #E1E1E1;
+    background-image: linear-gradient(#FFFFFF, #E1E1E1);
+    background-repeat: repeat-x;
+    border-color: -moz-use-text-color -moz-use-text-color #EBEBEB;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Helvetica,arial,freesans,clean,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 34px;
+    margin-left: 1px;
+    overflow: visible;
+    padding: 0 13px;
+    position: relative;
+    text-shadow: 1px 1px 0 #FFFFFF;
+    top: 1px;
+    white-space: nowrap;
+}
+form input[type="submit"]:hover {
+    background-color: #0770A0;
+    background-image: linear-gradient(#0CA6DD, #0770A0);
+    background-repeat: repeat-x;
+    border-bottom-color: #0770A0;
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+.container {
+    margin: 0 auto;
+    width: 920px;
+}
+.flash-messages {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border-radius: 3px 3px 3px 3px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 3px;
+}
+.flash {
+    background-color: #D4F6FA;
+    border: 1px solid #78909B;
+    color: #1D2B3D;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+}
+.flash.flash-error {
+    background-color: #FFEAEA;
+    border: 1px solid #CC7575;
+    color: #990000;
+}
+
+.ui-header{
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.ui-header-logo, .ui-top-nav{
+    float: left;
+}
+.ui-top-nav li a{
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+.ui-top-nav li a:hover{
+    color: #4183C4;
+    text-decoration: none;
+}
+.ui-header .ui-header-actions{
+    float: right;
+}
+
+.main{
+    margin-top: 10px;
+}
+.ui-main-body{
+    margin-top: 10px;
+    padding:15px 10px;
+    border: 1px solid #ddd;
+    width: auto;
+}
+.ui-list-col{}
+.ui-list-col .ui-list-item-col{
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.ui-list-col .ui-list-last{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.ui-list-row{
+    margin-top:10px;
+}
+.ui-list-row .ui-list-item-row{
+    float: left;
+}
+.ui-list-row .ui-list-item-row .ui-button{
+    font-size:14px;
+}
+
+.ui-tip-message{
+    display:inline-block;
+    font-style: normal;
+}
+
+.ui-footer{
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+}
+.ui-footer .ui-copyright{
+    float: right;
+    font-size: 11px;
+    color: #aaa;
+}
+
+.ui-animation{}
+.ui-animation .ui-alertMsg{
+    transition: all .5s ease-in-out .3s;
+    top:0;
+}
+.ui-alertMsg{
+    position: fixed;
+    top: -38px;
+    display: block;
+}
+.ui-alertMsg .ui-msg-success{
+    background-color: #60B044;
+    border-radius: 0 0 10px 10px;
+}
+.ui-alertMsg p{
+    padding: 8px 50px 10px;
+    text-align: center;
+    color: yellow;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+}
+
+.ui-form form label{
+    display: block;
+}
+.ui-form form label span{
+    display: block;
+}

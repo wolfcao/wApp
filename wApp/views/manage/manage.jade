@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  div.main
+    h1.ui-h1-title 管理
+    div.ui-main-body
+      ul.ui-list-col
+        li.ui-list-item-col
+          h2.ui-h2-title 个人
+          ul.ui-list-row.clearfix
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green.mr15(href='#') 发工作周报
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green.mr15(href='#') 发质量周报
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green.mr15(href='/user/setting') 个人信息管理
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green.mr15(href='#') 修改密码
+        li.ui-list-item-col
+          h2.ui-h2-title 部门
+          ul.ui-list-row.clearfix
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green.mr15(href='#') 部门管理
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green(href='#') 小组管理
+        li.ui-list-item-col.ui-list-last
+          h2.ui-h2-title 缺陷
+          ul.ui-list-row.clearfix
+            li.ui-list-item-row
+              a.ui-button.ui-btn-green.mr15(href='#') 缺陷管理
