@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	div.main
+		h1.ui-h1-title 部门管理
+		div.ui-main-body
+			div.ui-form
+				form(action='/department/add', method='post')
+					if (typeof action !== 'undefined')
+						input(id='J_formAction', type='hidden', value='#{action}')
+					label 
+						span 部门名称:
+						input.ui-input-text(type='text', name='name')
+					input(class='ui-input-submit', type='submit', name='commit', value='新增一个部门')
+			

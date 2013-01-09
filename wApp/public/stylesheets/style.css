@@ -16,9 +16,18 @@ a:hover {
 ul,ol,li{
     list-style-type: none;
 }
+table{
+    border-spacing: 0
+}
 .clearfix {
     clear: both;
     overflow: hidden;
+}
+.fn-left{
+    text-align: left;
+}
+.fn-center{
+    text-align: center;
 }
 .ml30{
     margin-left: 30px;
@@ -222,6 +231,11 @@ form input[type="submit"]:hover {
     float: right;
 }
 
+.ui-title-link{
+    float: right;
+    font-size: 16px;
+}
+
 .main{
     margin-top: 10px;
 }
@@ -281,6 +295,10 @@ form input[type="submit"]:hover {
     background-color: #60B044;
     border-radius: 0 0 10px 10px;
 }
+.ui-alertMsg .ui-msg-fail{
+    background-color: red;
+    border-radius: 0 0 10px 10px;
+}
 .ui-alertMsg p{
     padding: 8px 50px 10px;
     text-align: center;
@@ -295,4 +313,40 @@ form input[type="submit"]:hover {
 }
 .ui-form form label span{
     display: block;
+}
+
+.ui-table{
+    width: 100%;
+    border-left: 1px solid #ddd; 
+    border-top: 1px solid #ddd; 
+}
+.ui-table th, .ui-table td{
+    border-bottom:  1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+.ui-table th{
+    font-size: 18px;
+    background-color: #E5E5E5;
+    background-image: linear-gradient(#F5F5F5, #E5E5E5);
+    background-repeat: repeat-x;
+}
+.ui-table .ui-id{
+    width: 50px;
+}
+.ui-table .ui-act{
+    width: 200px;
+}
+
+.ui-sep{
+    font-size: 11px;
+    color: #666;
+    height: 10px;
+    display: inline-block;
+    margin: 0 6px 0 5px;
+    position: relative;
+    top: -2px;
 }

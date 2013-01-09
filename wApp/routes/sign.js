@@ -56,17 +56,19 @@ exports.session = function(req, res) {
 // 检查session或cookie中的登录用户信息
 exports.auth_user = function(req, res, next) {
 	if(req.session.user) {
-		adminModule.isExistRow({
-			_id: req.session.user._id
-		}, function(result) {
-			if(result && result.length>0) {
-				res.locals.curr_user = result[0];
-				next();
-			} else {
-				res.locals.curr_user = req.session.user;
-				next();
-			}
-		});
+		// adminModule.isExistRow({
+		// 	_id: req.session.user._id
+		// }, function(result) {
+		// 	if(result && result.length>0) {
+		// 		res.locals.curr_user = result[0];
+		// 		next();
+		// 	} else {
+		// 		res.locals.curr_user = req.session.user;
+		// 		next();
+		// 	}
+		// });
+		res.locals.curr_user = req.session.user;
+		next();
 	} else {
 		var cookie = req.cookies[config.auth_cookie_name];
 		if (!cookie) {

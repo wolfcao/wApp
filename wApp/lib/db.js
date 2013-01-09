@@ -6,7 +6,8 @@ exports.conn = function(database) {
 		host:config.db.host,
 		user:config.db.user,
 		password:config.db.password,
-		database:database
+		database:database,
+		debug: false
 	});
 	return connection;
 };
@@ -16,7 +17,7 @@ exports.useDB = function(connection, database) {
 };
 
 exports.selectAll = function(connection, table, callback) {
-	connection.query('select * from ' + table, function(err, results) {
+	var query = connection.query('SELECT * FROM ' + table + ' where 1=1', function(err, results) {
 		if(err) {
 			throw err;
 		}

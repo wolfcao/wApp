@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+	div.main
+		h1.ui-h1-title.clearfix 部门管理
+			a.ui-button.ui-btn-green.ui-title-link(href='/department/add') 新增一个部门
+		div.ui-main-body
+			table.ui-table
+				thead
+					tr
+						th.fn-left.ui-id id
+						th.fn-left 部门名称
+						th.ui-act 操作
+				tbody
+					each item in list
+						tr
+							td.fn-left=item._id
+							td.fn-left=item.name
+							td.fn-center
+								a(href='#') 修改
+								span.ui-sep |
+								a(href='#') 删除

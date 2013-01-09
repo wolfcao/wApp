@@ -14,9 +14,9 @@ var userDB = function() {
 	db.useDB(conn, database);
 }
 
-exports.all = function() {
+exports.all = function(callback) {
 	userDB();
-	db.selectAll(conn,table);
+	db.selectAll(conn,table,callback);
 };
 
 exports.insertRow = function(items, callback) {

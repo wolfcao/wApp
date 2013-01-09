@@ -6,6 +6,9 @@ var adminModule = require('../module/admin');
 var that = this;
 
 exports.createAccount = function(req, res) {
+	// 检查session，是否登录，具有访问页面的权限
+	util.isLogined(req, res);
+	// code body
 	var title = '';
 	var _loginName = req.param('login');
 	var _passwd = req.param('passwd');
@@ -60,11 +63,9 @@ exports.modifySetting = function(req, res) {
 	var title = 'User setting';
 	var _id = req.param('userid');
 	var _email = req.param('email');
-	var _nickname = req.param('nickname');
 	// update admin infor
 	adminModule.updateRow({
-		email: _email,
-		nickname: _nickname
+		email: _email
 	}, {
 		_id: _id
 	});

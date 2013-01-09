@@ -9,6 +9,7 @@ var express = require('express')
   , _pageSign = require('./routes/sign')
   , _pageUser = require('./routes/user')
   , _pageManage = require('./routes/manage')
+  , _pageDepart = require('./routes/department')
   , _pageTemplate = require('./routes/createTemplate')
   , http = require('http')
   , path = require('path');
@@ -51,7 +52,11 @@ app.get('/user/setting', _pageUser.setting);
 app.post('/user/setting', _pageUser.modifySetting);
 app.get('/createTemplate', _pageTemplate.list);
 // manage
-app.get('/manage',_pageManage.index);
+app.get('/manage', _pageManage.index);
+// department
+app.get('/department/list', _pageDepart.list);
+app.get('/department/add', _pageDepart.add);
+app.post('/department/add', _pageDepart.addSetting);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

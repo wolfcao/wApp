@@ -13,10 +13,7 @@ html
         div.ui-header-actions
           if curr_user
             em.ui-tip-message.mr15 Hi, 
-              if curr_user.nickname
-                a(href='/user/setting') #{curr_user.nickname}!
-              else
-                a(href='/user/setting') #{curr_user.login}!
+              a(href='/user/setting') #{curr_user.login}!
             a.ui-button(href='/sign/signout') Sign out
           else
             a.ui-button.ui-btn-green.mr15(href='/sign/signup') Sign up
