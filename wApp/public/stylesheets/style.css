@@ -23,11 +23,16 @@ table{
     clear: both;
     overflow: hidden;
 }
+.ft-red{
+    color: red;
+    font-weight: bold;
+}
 .fn-left{
     text-align: left;
 }
 .fn-center{
     text-align: center;
+    padding-left: 0!important;
 }
 .ml30{
     margin-left: 30px;
@@ -37,6 +42,9 @@ table{
 }
 .pl0{
     padding-left: 0!important;
+}
+.w300{
+    width: 300px;
 }
 
 input[type="text"], input[type="password"], input[type="email"], textarea {
@@ -186,7 +194,7 @@ form input[type="submit"]:hover {
 }
 .container {
     margin: 0 auto;
-    width: 920px;
+    width: 1000px;
 }
 .flash-messages {
     background: none repeat scroll 0 0 #EFEFEF;
@@ -325,7 +333,7 @@ form input[type="submit"]:hover {
     border-right: 1px solid #ddd;
     padding-left: 10px;
     height: 40px;
-    line-height: 40px;
+    line-height: 25px;
     font-size: 14px;
 }
 .ui-table th{
@@ -335,10 +343,10 @@ form input[type="submit"]:hover {
     background-repeat: repeat-x;
 }
 .ui-table .ui-id{
-    width: 50px;
+    width: 40px;
 }
 .ui-table .ui-act{
-    width: 200px;
+    width: 90px;
 }
 
 .ui-sep{
@@ -349,4 +357,14 @@ form input[type="submit"]:hover {
     margin: 0 6px 0 5px;
     position: relative;
     top: -2px;
+}
+.ui-select{
+    background-color: #fff;
+    font-size: 110%;
+    margin: 5px 0 20px;
+    padding: 5px;
+    width: 342px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }

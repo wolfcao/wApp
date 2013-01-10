@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+	div.main
+		h1.ui-h1-title 小组管理
+		div.ui-main-body
+			div.ui-form
+				form(action='/group/add', method='post')
+					if (typeof action !== 'undefined')
+						input(id='J_formAction', type='hidden', value='#{action}')
+					label 
+						span 小组名称:
+						input.ui-input-text(type='text', name='name')
+					label
+						span 所属部门
+						select.ui-select(name='departid')
+							each item in departlist
+								option(value='#{item._id}')=item.name
+					input(class='ui-input-submit', type='submit', name='commit', value='新增一个小组')
+			

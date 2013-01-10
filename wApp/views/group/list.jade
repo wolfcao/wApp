@@ -2,20 +2,22 @@ extends ../layout
 
 block content
 	div.main
-		h1.ui-h1-title.clearfix 部门管理
-			a.ui-button.ui-btn-green.ui-title-link(href='/department/add') 新增一个部门
+		h1.ui-h1-title.clearfix 小组管理
+			a.ui-button.ui-btn-green.ui-title-link(href='/group/add') 新增一个小组
 		div.ui-main-body
 			table.ui-table
 				thead
 					tr
 						th.fn-left.ui-id id
-						th.fn-left 部门名称
+						th.fn-left 小组名称
+						th.fn-left 所属部门
 						th.ui-act.pl0 操作
 				tbody
 					each item in list
 						tr
 							td.fn-left=item._id
 							td.fn-left=item.name
+							td.fn-left=item.departname
 							td.fn-center.pl0
 								a(href='#') 修改
 								span.ui-sep |

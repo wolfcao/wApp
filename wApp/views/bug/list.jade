@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+	div.main
+		h1.ui-h1-title.clearfix 缺陷管理
+			a.ui-button.ui-btn-green.ui-title-link(href='/bug/add') 新增一个缺陷
+		div.ui-main-body
+			table.ui-table
+				thead
+					tr
+						th.fn-left.ui-id id
+						th.fn-left.w300 简要描述
+						th.fn-center 缺陷原因
+						th.fn-left 责任人
+						th.fn-center 严重程度
+						th.fn-left 项目名称
+						th.fn-center 环境
+						th.ui-act.pl0 操作
+				tbody
+					each item in list
+						- var levelChar = ['低','中','高','紧急'];
+						- var environ = ['测试','sit','线上'];
+						tr
+							td.fn-left=item._id
+							td.fn-left=item.headline
+							td.fn-center=item.type
+							td.fn-left=item.personname
+							- if(item.level>1)
+								td.fn-center.ft-red=levelChar[item.level]
+							- else
+								td.fn-center=levelChar[item.level]
+							td.fn-left=item.project
+							- if(item.environment>0)
+								td.fn-center.ft-red=environ[item.environment]
+							- else
+								td.fn-center=environ[item.environment]
+							td.fn-center
+								a(href='#') 修改
+								span.ui-sep |
+								a(href='#') 删除

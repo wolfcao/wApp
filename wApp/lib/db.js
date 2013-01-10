@@ -48,7 +48,7 @@ exports.update = function(connection, table, items, where) {
 exports.findOne = function(connection, table, items, callback) {
 	var keyValueStr = keyValToStr(items,'and');
 
-	connection.query('select * from ' + table + ' where ' + keyValueStr, function(err, result) {
+	var query = connection.query('select * from ' + table + ' where ' + keyValueStr, function(err, result) {
 		if(err) {
 			throw err;
 		}
@@ -56,6 +56,7 @@ exports.findOne = function(connection, table, items, callback) {
 			callback.call(this, result);
 		}
 	});
+	return query;
 };
 
 var keyValToStr = function(items, sep) {

@@ -10,6 +10,8 @@ var express = require('express')
   , _pageUser = require('./routes/user')
   , _pageManage = require('./routes/manage')
   , _pageDepart = require('./routes/department')
+  , _pageGroup = require('./routes/group')
+  , _pageBug = require('./routes/bug')
   , _pageTemplate = require('./routes/createTemplate')
   , http = require('http')
   , path = require('path');
@@ -57,6 +59,14 @@ app.get('/manage', _pageManage.index);
 app.get('/department/list', _pageDepart.list);
 app.get('/department/add', _pageDepart.add);
 app.post('/department/add', _pageDepart.addSetting);
+// group
+app.get('/group/list', _pageGroup.list);
+app.get('/group/add', _pageGroup.add);
+app.post('/group/add', _pageGroup.addSetting);
+// bug
+app.get('/bug/list/:pagenum', _pageBug.list);
+app.get('/bug/add', _pageBug.add);
+app.post('/bug/add', _pageBug.addSetting);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
