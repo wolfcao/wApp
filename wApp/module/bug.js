@@ -38,6 +38,12 @@ exports.insertRow = function(items, callback) {
 		level: items.level,
 		project: items.project,
 		environment: items.environment,
-		closetime: items.closetime
+		closetime: items.closetime,
+		createtime: items.createtime
 	}, callback);
+};
+
+exports.query = function(sql, callback) {
+	userDB();
+	db.query(conn, sql, callback);
 };

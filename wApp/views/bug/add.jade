@@ -1,0 +1,56 @@
+extends ../layout
+
+block content
+	div.main
+		h1.ui-h1-title 缺陷管理
+		div.ui-main-body
+			div.ui-form
+				form(action='/bug/add', method='post')
+					if (typeof action !== 'undefined')
+						input(id='J_formAction', type='hidden', value='#{action}')
+					label
+						span CQID:
+						input.ui-input-text(type='text', name='cqid')
+					label
+						span 缺陷类型:
+						select.ui-select(type='text', name='type')
+							each item in bugType
+								option(value='#{item.val}')=item.msg
+					label
+						span 缺陷原因:
+						select.ui-select(type='text', name='reason')
+					label
+						span 责任人:
+						select.ui-select(type='text', name='personid')
+							each item in persons
+								option(value='#{item._id}')=item.login
+					label
+						span 严重程度
+						select.ui-select(type='text', name='level')
+							option(value='0') 低
+							option(value='1') 中
+							option(value='2') 高
+							option(value='3') 紧急
+					label
+						span 缺陷所在环境
+						select.ui-select(type='text', name='environment')
+							option(value='0') 测试环境
+							option(value='1') sit环境
+							option(value='2') 线上环境
+					label
+						span Headine简要描述:
+						input.ui-input-text.wFull(type='text', name='headline')
+					label
+						span 详细描述:
+						textarea.ui-input-text.wFull(type='text', name='description')
+					label
+						span 修改方案:
+						textarea.ui-input-text.wFull(type='text', name='modify')
+					label
+						span 项目名称:
+						input.ui-input-text(type='text', name='project')
+					label
+						span 关闭时间:
+						input.ui-input-text(type='text', name='closetime')
+					input(class='ui-input-submit', type='submit', name='commit', value='新增一个缺陷')
+			

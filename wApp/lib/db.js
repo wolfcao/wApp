@@ -16,8 +16,19 @@ exports.useDB = function(connection, database) {
 	connection.query('use ' + database);
 };
 
+exports.query = function(connection, sql, callback) {
+	connection.query(sql, function(err, results) {
+		if(err) {
+			throw err;
+		}
+		if(results) {
+			callback.call(this, results);
+		}
+	});
+};
+
 exports.selectAll = function(connection, table, callback) {
-	var query = connection.query('SELECT * FROM ' + table + ' where 1=1', function(err, results) {
+	connection.query('SELECT * FROM ' + table + ' where 1=1', function(err, results) {
 		if(err) {
 			throw err;
 		}

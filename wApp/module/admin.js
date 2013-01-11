@@ -36,8 +36,7 @@ exports.updateRow = function(items, where) {
 // 通过自定义条件，查询数据表中是否有匹配
 exports.isExistRow = function(items, callback) {
 	userDB();
-	var query = db.findOne(conn, table, items, callback);
-	return query;
+	db.findOne(conn, table, items, callback);
 };
 
 // 通过条件账户名和密码，查询数据表中是否有匹配

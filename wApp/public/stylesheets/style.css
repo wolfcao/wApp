@@ -43,6 +43,9 @@ table{
 .pl0{
     padding-left: 0!important;
 }
+.wFull{
+    width: 98%!important;
+}
 .w300{
     width: 300px;
 }

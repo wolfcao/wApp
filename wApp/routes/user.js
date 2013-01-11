@@ -63,9 +63,11 @@ exports.modifySetting = function(req, res) {
 	var title = 'User setting';
 	var _id = req.param('userid');
 	var _email = req.param('email');
+	var _createTime = util.getTimestamp();
 	// update admin infor
 	adminModule.updateRow({
-		email: _email
+		email: _email,
+		createtime: _createTime
 	}, {
 		_id: _id
 	});
